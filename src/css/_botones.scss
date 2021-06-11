@@ -1,0 +1,49 @@
+@mixin btn {
+    float:right;
+    color:#fff;
+    width:50%;
+    right:30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.opciones{
+    position:fixed;
+    top:0%;
+    background-color:#6b63b5;
+    color:#fff;
+    width:200px;
+    right: 20%;
+    padding: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    .btnFavoritos {
+        @include btn();
+        border-right: solid #fff 1px   
+    }
+    .btnAgregar {
+        @include btn();
+        
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .opciones{
+        position:fixed;
+        bottom:0%;
+        top: inherit;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        left: 5%;
+        width: 90%;
+    }
+
+    .container.mt-2 {
+        margin-bottom: 60px;
+    }
+
+    
+}

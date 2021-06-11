@@ -1,0 +1,110 @@
+@import "avatar";
+$carMed: 600px;
+$avatarMed:250px;
+$descriptionMed:350px;
+
+.ficha{
+    width:100%;
+    max-width:$carMed;
+    height:250px;
+    //background: red;
+    background: linear-gradient(#6b63b5, #fff);
+    border-radius: 20px;
+
+    &.Gryffindor {
+        background: linear-gradient(#EF8028, #fff);
+    }
+    
+    &.Slytherin {
+        background: linear-gradient(#28EF2E, #fff);
+    }
+
+    &.Hufflepuff {
+        background: linear-gradient(#E3EF28, #fff);
+    }
+
+    &.Ravenclaw {
+        background: linear-gradient(#E3EF28, #fff);
+    }
+
+
+    .avatar{
+        width:($avatarMed * 100%) / $carMed;
+        float:left;
+        padding: 10px 15px;
+        margin-top: 12px;
+    }
+    @media screen and (max-width: 1199px) {
+        .avatar{
+            padding: 35px 15px;
+        }   
+    }
+    @media screen and (max-width: 991px) {
+        .avatar{
+            padding: 10px 15px;
+        }   
+    }
+    .description{
+        width:($descriptionMed * 100%) / $carMed;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        float:left;
+        background: #fff;
+        padding: 10px;
+        .status {
+            width: 100%;
+            color: #bbb;
+            text-transform: uppercase;
+        }
+        .nombre {
+            width: 100%;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .nombre:first-letter {
+            text-transform: uppercase;
+        }
+
+        .caracteristicas{
+            width: 100%;
+            label {
+                display: inherit;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .caracteristicas{
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .avatar{
+            width:45%;
+        }
+        .description{
+            width:55%;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .avatar{
+            width:100%;
+            padding: 0 0 10px;
+        }
+        .description{
+            width:100%;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .ficha{
+        margin: 0 auto
+    }
+
+}

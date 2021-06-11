@@ -1,0 +1,75 @@
+@import "card";
+@import "filter";
+@import "botones";
+
+body{
+    background:url("./../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #000 !important
+}
+
+.favoritos {
+    max-width: 20px;
+    float: right;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.logo {
+    width: 100%;
+    max-width: 200px;
+}
+
+.hide {
+    opacity: 0;
+}
+
+h1 {
+    color: #fff;
+}
+
+.genero {
+    display: inline !important;
+}
+
+.form-check-input {
+    margin-top: 6px !important;
+    margin-left: 15px !important;
+}
+
+.labelRadio{
+    text-align: left !important;
+}
+
+.botones {
+    margin: 50px;
+    @media screen and (max-width: 991px) {
+        .col-md-6 {
+            flex: 0 0 50% !important;
+            max-width: 50% !important;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .col-md-6 {
+        flex: inherit !important;
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        background: inherit;   
+    }
+    .form-check-input {
+        position: inherit !important;
+        margin-top: -6px !important;
+        margin-left: 20px !important;
+        margin-right: 10px !important;
+    }
+}
+
+

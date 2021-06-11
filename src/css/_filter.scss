@@ -1,0 +1,25 @@
+@mixin boton{
+    width: 250px;
+    height: 60px;
+    border: solid 2px #6b63b5;
+    color: #fff;
+}
+
+.filter{
+    @include boton
+    background-color: #5c5c5c;
+    &:hover {
+        background-color: #9c97c9
+    }
+    &:active {
+        background-color: #6b63b5
+    }
+
+    @media screen and (max-width: 576px) {
+        background-color: transparent;
+        width: 100%;
+    }
+    
+}
+
+
