@@ -1,16 +1,15 @@
 Evalución frontend
 
 # Revisión de ambiente  
-Se requiere tener instalado node.js, para esto abrimos una consola o termina y escrivimos el siguiente comando node --version,  
-si este regresa error es por que no se tiene instalado node, entonces procedemos a descargrlo de la siguiente ruta https://nodejs.org/es/   
-y daremos click el boton que dice Actual.  
+Se requiere tener instalado node.js, para esto abrimos una consola o termina y escrivimos el siguiente comando node --version, si este regresa error es por que no se tiene instalado node, entonces procedemos a descargrlo de la siguiente ruta https://nodejs.org/es/ y daremos click el boton que dice Actual.  
 
 ## Clonar proyecto  
 Para clonar el proyecto debemos tener git instalado  
 En caso de no tenerlo consultar la guia para hacerlo : http://rogerdudler.github.io/git-guide/index.es.html  
 Ingresamos a la carpeta donde se clonara el  proyecto y abrimos la consola de git, "Git Bash Here"  
 Ejecutamos el siguiente comando git clone https://github.com/fwilchss/harrypotter.git  
-Entramos al proyecto con cd harrypotter  
+Entramos al proyecto con:  
+cd harrypotter  
 
 ## Ambiente REACT  
 Instalamos react:  
