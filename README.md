@@ -70,5 +70,17 @@ npm i react-redux
 ### Quitar vulnerabilidades 
 npm audit fix  
 
+### ¿Qué es lo que más te gustó de tu desarrollo?  
+
+Aprender una pequeña parte de esta tecnologia, lo que realice lo aprendi en un dia, pero me tope con el proceso de integracion de librerias ya que descubir que es muy distinto, pero con la practica podre realizar mas cosas sin problemas 
+
+### Si hubieras tenido más tiempo ¿qué hubieras mejorado o qué más hubieras hecho?  
+
+Terminar la funcionalidad de guardar favoriotos y mostrar en una lista los favoritos cargados  
+
+### Descríbenos un pain point o bug con el que te hayas encontrado y como lo solucionaste  
+
+El unico punto que me detuvo fue el no poder conectar el store de redux con la funcionalidad de favoritos  
+
   
 
