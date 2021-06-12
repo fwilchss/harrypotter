@@ -5,17 +5,20 @@ import './css/style.css';
 //import 'bootstrap/dist/css/bootstrap.css';
 import './css/bootstrap.min.css';
 import {FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faUserPlus, faBookmark as faBookmarkS} from '@fortawesome/free-solid-svg-icons';
+import {faUserPlus, faBookmark as faBookmarkS, faTimes} from '@fortawesome/free-solid-svg-icons';
 import {faBookmark as faBookmarkR} from '@fortawesome/free-regular-svg-icons';
 import Registro from './Registro';
 import { connect } from 'react-redux';
+import Favoritos from './Favoritos';
+
 
 class Card extends React.Component {
 
     state = {
         persons: [],
         abierto : false,
-        position : 0
+        position : 0,
+        iconF: faBookmarkR
     }
 
     componentDidMount() {
@@ -46,20 +49,29 @@ class Card extends React.Component {
         this.setState({abierto : !this.state.abierto});
     }
 
-    render(agregarFavorito) {
+    mostrarFavoritos = () => {
+        if(document.getElementById('collap').style.display == 'none')
+            document.getElementById('collap').style.display = 'block';
+        else
+            document.getElementById('collap').style.display = 'none';
+    }
+
+    render() {
         return (
             <div className="App">
                 <Registro abierto={this.state.abierto} abriModal={this.abriModal} filtroStaff={this.filtroStaff} filtroStudent={this.filtroStudent}></Registro>
-                <div className="container">
+                <div className="container favoritos">
                     <div className="opciones">
                         <div className="btnAgregar" onClick={this.abriModal}>
                             Agregar <FontAwesomeIcon icon={faUserPlus} />
                         </div>
-                        <div className="btnFavoritos">
+                        <div className="btnFavoritos" onClick={()=>this.mostrarFavoritos()}>
                             Favoritos  <FontAwesomeIcon icon={faBookmarkS} />
                         </div>
                     </div>
+                    <Favoritos />
                 </div>
+                
                 <div className="container mt-2">
                     <div className="row">
                         <div className="col-md-12 text-center">
@@ -88,39 +100,44 @@ class Card extends React.Component {
                     <div className="row">
                         {
                             this.state.persons.map(
-                                person =><div className="col-md-6 form-group">
-                                    <div className={"ficha "+person.house} >
-                                        <div className="avatar">
-                                            <div className="img-avatar" style={{background: 'url('+person.image+') center 0%'}}></div>
-                                        </div>
-                                        <div className="description">
-                                            <div className="status">
-                                                {(this.state.position == 1?'estudiante':'staff')}
-                                                <div className="favoritos">
-                                                    <FontAwesomeIcon icon={faBookmarkR} className="link" onClick={() => agregarFavorito(person)}/>
+                                (person) => {
+                                let icon = this.state.iconF;
+                                
+                                return(
+                                    <div className="col-md-6 form-group">
+                                        <div className={"ficha "+person.house} >
+                                            <div className="avatar">
+                                                <div className="img-avatar" style={{background: 'url('+person.image+') center 0%'}}></div>
+                                            </div>
+                                            <div className="description">
+                                                <div className="status">
+                                                    {(this.state.position == 1?'estudiante':'staff')}
+                                                    <div className="favoritos">
+                                                        <FontAwesomeIcon icon={icon}  className="link" onClick={() => this.props.agregarFavorito(person)}/>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="nombre">
-                                                {person.name}
-                                            </div>
-                                            <div className="caracteristicas">
-                                                <label>
-                                                    <strong>Cumpleaños:</strong> <span className="lab">{person.dateOfBirth}</span>
-                                                </label>
-                                                <label>
-                                                    <strong>Genero: </strong> <span className="lab">{person.gender}</span>
-                                                </label>
-                                                <label>
-                                                    <strong> Color de ojos:</strong> <span className="lab">{person.eyeColour}</span>
-                                                </label>
-                                                <label>
-                                                    <strong>Color de pelo:</strong> <span className="lab">{person.hairColour}</span>  
-                                                </label>
+                                                <div className="nombre">
+                                                    {person.name}
+                                                </div>
+                                                <div className="caracteristicas">
+                                                    <label>
+                                                        <strong>Cumpleaños:</strong> <span className="lab">{person.dateOfBirth}</span>
+                                                    </label>
+                                                    <label>
+                                                        <strong>Genero: </strong> <span className="lab">{person.gender}</span>
+                                                    </label>
+                                                    <label>
+                                                        <strong> Color de ojos:</strong> <span className="lab">{person.eyeColour}</span>
+                                                    </label>
+                                                    <label>
+                                                        <strong>Color de pelo:</strong> <span className="lab">{person.hairColour}</span>  
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            )
+                                )
+                            })
                         }
                     </div>
                 </div>
@@ -128,7 +145,6 @@ class Card extends React.Component {
         );  
     }
 }
-
 
 const mapStateToProps = state =>({
     persons : state.persons

@@ -1,22 +1,33 @@
 import React from "react"
 import { connect } from 'react-redux';
+import './css/bootstrap.min.css';
+import {FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+
+
 
 const Favoritos = ({favoritos, quitarfavoritos}) => (
+    
     <section>
-        <ul className="cont">
+        <div className="favorito" id="collap">
             {
                 favoritos.map(j => (
-                    <li>
-                        <img src={j.image} alt={j.name}/> <button onClick={() => quitarfavoritos(j)}>X</button>
-                    </li>
+                    <div className="row">
+                        <div className="col-md-12">
+                            <img src={j.image} alt={j.name}/> <label>{j.name}</label> 
+                            <button className="closeFav" onClick={() => quitarfavoritos(j)}>
+                                <FontAwesomeIcon icon={faTrashAlt} className="link" color="White" />    
+                            </button>
+                        </div>
+                    </div>
                 ))
             }
-        </ul>
+        </div>
     </section>
 )
 
 const mapStateToProps = state =>({
-    persons : state.persons
+    favoritos : state.favoritos
 })
 
 const mapDispatchToProps = dispatch =>({

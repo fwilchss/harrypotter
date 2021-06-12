@@ -8,20 +8,24 @@ const initalState = {
 const reducerFavoritos = (state = initalState, action) => {
 
     if(action.type == "AGREGAR_FAVORITO") {
+        console.log(action.personaje);
+        
         return{
             ...state,
-            favoritos: state.favoritos.concat(action.favorito)
+            favoritos: state.favoritos.concat(action.personaje)
+            
         }
     }
 
     if(action.type == "QUITAR_FAVORITOS") { 
         return{
             ...state,
-            favoritos: state.favoritos.filter(j => j.id !== action.favorito.id)
+            favoritos: state.favoritos.filter(j => j.id !== action.favorito.id),
         }
     }
 
-    console.log(action);
+    
+    
     return state;
 }
 

@@ -130,16 +130,75 @@
     background-color: transparent;
     width: 100%; } }
 
+#collap {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.favoritos .favorito {
+  max-width: 300px;
+  background-color: #9c97c9;
+  position: fixed;
+  right: 20%;
+  z-index: 1;
+  top: 12px; }
+
+.favoritos .favorito .row {
+  margin-right: 0;
+  margin-left: 0; }
+
+.favoritos .favorito .row:first-child {
+  height: 83px;
+  padding-top: 22px; }
+
+.favoritos .favorito .col-md-12 {
+  list-style: none;
+  padding-right: -10px;
+  border-bottom: solid 1px #6b63b5;
+  padding: 5px;
+  color: #fff; }
+
+.favoritos .favorito .col-md-12 button {
+  background: transparent;
+  border: 0; }
+
+.favoritos .favorito .col-md-12 label {
+  margin-left: 5px;
+  font-weight: bold; }
+
+.favoritos .favorito .col-md-12 img {
+  width: 50px;
+  height: 50px; }
+
+.favoritos .favorito .col-md-12 .closeFav {
+  float: right;
+  margin-top: 10px;
+  margin-right: 15px; }
+
+@media screen and (max-width: 576px) {
+  .favoritos .favorito {
+    top: inherit;
+    bottom: 15px;
+    left: 5%;
+    max-width: 90%; }
+  .favoritos .row:first-child {
+    height: 60px !important;
+    padding-top: 0px !important; }
+  .favoritos .row:last-child {
+    height: 80px !important;
+    padding-top: 0px !important; } }
+
 .opciones {
   position: fixed;
   top: 0%;
   background-color: #6b63b5;
   color: #fff;
-  width: 200px;
+  width: 300px;
   right: 20%;
   padding: 5px;
   border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px; }
+  border-bottom-left-radius: 20px;
+  z-index: 10; }
 
 .opciones .btnFavoritos {
   float: right;
