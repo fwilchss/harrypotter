@@ -76,11 +76,12 @@ Aprender una pequeña parte de esta tecnologia, lo que realice lo aprendi en un 
 
 ### Si hubieras tenido más tiempo ¿qué hubieras mejorado o qué más hubieras hecho?  
 
-Terminar la funcionalidad de guardar favoriotos y mostrar en una lista los favoritos cargados  
+Hubiera modificado el formulario de agregar personaje para pedir la casa y la foto, tambien el parametro de si esta vivo o finado, ya que no viene en los archivos
 
 ### Descríbenos un pain point o bug con el que te hayas encontrado y como lo solucionaste  
 
-El unico punto que me detuvo fue el no poder conectar el store de redux con la funcionalidad de favoritos  
+El unico punto que me detuvo fue el no poder conectar el store de redux con la funcionalidad de favoritos.
+Al final si resolvi este punto y acomode la vista para el responsive
 
   
 
