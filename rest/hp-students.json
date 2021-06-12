@@ -252,26 +252,6 @@
       "actor": "Josh Herdman",
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/goyle.jpg"
-    },
-    {
-      "name": "harry potter",
-      "dateOfBirth": "11-6-2021",
-      "eyeColour": "verdes",
-      "hairColour": "cafe claro",
-      "gender": "male",
-      "position": "1",
-      "image": "https://pbs.twimg.com/profile_images/1378007131027251209/qY7wH_2W_400x400.jpg",
-      "id": 12
-    },
-    {
-      "name": "felipe",
-      "dateOfBirth": "9-6-2021",
-      "eyeColour": "cafes",
-      "hairColour": "cafe",
-      "gender": "female",
-      "position": "1",
-      "image": "https://pbs.twimg.com/profile_images/1378007131027251209/qY7wH_2W_400x400.jpg",
-      "id": 13
     }
   ]
 }
