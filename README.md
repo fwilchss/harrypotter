@@ -64,7 +64,8 @@ Para compilar y dejar un observador de cambios de Sass a css :  node-sass -w ./s
 Se importa axios para las consultas de los servicios: npm install axios  
 
 ### Intalar redux  
-npm install redux   
+npm i redux  
+npm i react-redux
 
 ### Quitar vulnerabilidades 
 npm audit fix  
