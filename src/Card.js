@@ -17,7 +17,6 @@ class Card extends React.Component {
     state = {
         persons: [],
         abierto : false,
-        position : 0,
         iconF: faBookmarkR
     }
 
@@ -25,7 +24,7 @@ class Card extends React.Component {
         axios.get('http://localhost:4000/students')
         .then(res => {
             const persons = res.data;
-            this.setState({ persons, position : 1 });
+            this.setState({ persons});
         })
     }
 
@@ -33,7 +32,7 @@ class Card extends React.Component {
         axios.get('http://localhost:4000/students')
             .then(res => {
             const persons = res.data;
-            this.setState({ persons, position : 1 });
+            this.setState({ persons});
         })
     }
 
@@ -41,7 +40,7 @@ class Card extends React.Component {
         axios.get('http://localhost:4001/staff')
         .then(res => {
             const persons = res.data;
-            this.setState({ persons , position : 2});
+            this.setState({ persons});
         })
     }
 
@@ -53,13 +52,13 @@ class Card extends React.Component {
         axios.get('http://localhost:4000/students?alive=false')
             .then(res => {
             const persons = res.data;
-            this.setState({ persons, position : 1 });
+            this.setState({ persons});
             axios.get('http://localhost:4001/staff?alive=false')
                 .then(res => {
                 const staff = res.data;
+                const pos = 2;
                 this.setState({ 
-                    persons : this.state.persons.concat(staff), 
-                    position : 1 
+                    persons : this.state.persons.concat(staff)
                 });
             })
         })
@@ -140,7 +139,7 @@ class Card extends React.Component {
                                             </div>
                                             <div className="description">
                                                 <div className="status">
-                                                    {(this.state.position == 1?'estudiante':'staff')+" / "+(person.alive ?'vivo':'finado')}
+                                                    {(person.hogwartsStudent?'estudiante':'staff')+" / "+(person.alive ?'vivo':'finado')}
                                                     <div className="favoritos">
                                                         <FontAwesomeIcon icon={icon}  className="link" onClick={() => this.props.agregarFavorito(person)}/>
                                                     </div>
