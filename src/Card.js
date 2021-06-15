@@ -45,6 +45,30 @@ class Card extends React.Component {
         })
     }
 
+    filtroFinados = () => {
+        this.setState({ 
+            persons : [] 
+        });
+
+        axios.get('http://localhost:4000/students?alive=false')
+            .then(res => {
+            const persons = res.data;
+            this.setState({ persons, position : 1 });
+            axios.get('http://localhost:4001/staff?alive=false')
+                .then(res => {
+                const staff = res.data;
+                this.setState({ 
+                    persons : this.state.persons.concat(staff), 
+                    position : 1 
+                });
+            })
+        })
+
+        
+
+        
+    }
+
     abriModal = () => {
         this.setState({abierto : !this.state.abierto});
     }
@@ -62,10 +86,10 @@ class Card extends React.Component {
                 <Registro abierto={this.state.abierto} abriModal={this.abriModal} filtroStaff={this.filtroStaff} filtroStudent={this.filtroStudent}></Registro>
                 <div className="container favoritos">
                     <div className="opciones">
-                        <div className="btnAgregar" onClick={this.abriModal}>
-                            Agregar <FontAwesomeIcon icon={faUserPlus} />
+                        <div className="btnAgregar" onClick = {this.abriModal}>
+                            Agregar <FontAwesomeIcon icon = {faUserPlus} />
                         </div>
-                        <div className="btnFavoritos" onClick={()=>this.mostrarFavoritos()}>
+                        <div className="btnFavoritos" onClick={() => this.mostrarFavoritos()}>
                             Favoritos  <FontAwesomeIcon icon={faBookmarkS} />
                         </div>
                     </div>
@@ -86,14 +110,19 @@ class Card extends React.Component {
                         </div>
                     </div>
                     <div className="row botones">
-                        <div className="col-md-6 text-center">
+                        <div className="col-md-4 text-center">
                             <button className="filter" id="estudiantes" onClick={this.filtroStudent}>
                                 Estudiantes
                             </button>
                         </div>
-                        <div className="col-md-6 text-center">
+                        <div className="col-md-4 text-center">
                             <button className="filter" id="staff" onClick={this.filtroStaff}>
                                 Staff
+                            </button>
+                        </div>
+                        <div className="col-md-4 text-center">
+                            <button className="filter" id="staff" onClick={this.filtroFinados}>
+                                Finados
                             </button>
                         </div>
                     </div>
@@ -111,7 +140,7 @@ class Card extends React.Component {
                                             </div>
                                             <div className="description">
                                                 <div className="status">
-                                                    {(this.state.position == 1?'estudiante':'staff')}
+                                                    {(this.state.position == 1?'estudiante':'staff')+" / "+(person.alive ?'vivo':'finado')}
                                                     <div className="favoritos">
                                                         <FontAwesomeIcon icon={icon}  className="link" onClick={() => this.props.agregarFavorito(person)}/>
                                                     </div>
