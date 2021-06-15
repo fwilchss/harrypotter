@@ -34,14 +34,15 @@ Ejemplo: {"staff": "Datos de Archivo"}
 Tambien se tiene que agregar el elemento id a los registros ya que al guardar con json server marca error si no lo tiene  
 Nota: Esto ya no se tiene que hacer, ya que se corrigio al subir  
 
-Ingresamos a la carperta rest la cual se coloco en la carpeta raiz: 
+Ingresamos a la carperta rest la cual se coloco en la carpeta raiz:  
 -- cd harrypotter\rest  
 
 Abrimos los archivos con json-server en una terminal cada instrucción y verificamos que estemos en la carpeta "harrypotter\rest":   
--- cd harrypotter\rest
--- json-server --watch .\hp-students.json  --port 4000
--- cd harrypotter\rest
--- json-server --watch .\hp-staff.json  --port 4001
+-- cd harrypotter\rest  
+-- json-server --watch .\hp-students.json  --port 4000  
+-- cd harrypotter\rest  
+-- json-server --watch .\hp-staff.json  --port 4001  
+
 
 # Desarrollo del proyecto  
 A continuación se explica como se creo el proyecto inicialmente.  
