@@ -53,11 +53,20 @@ class Registro extends React.Component {
 
     setStudiante =() => {
         let url = '';    
+        var hogwartsStudent = '';
+        var hogwartsStaff = ''
 
-        if(this.state.position == 1)
+
+        if(this.state.position == 1){
+            hogwartsStudent = true;
+            hogwartsStaff = false;
             url = "http://localhost:4000/students";
-        else
+        } else {
+            hogwartsStudent = false;
+            hogwartsStaff = true;
             url = "http://localhost:4001/staff";
+        }
+            
 
         this.setState({ 
             typeMsn : 'alert-danger'         
@@ -151,6 +160,9 @@ class Registro extends React.Component {
             hairColour : this.state.hairColour,
             gender : this.state.gender,
             position : this.state.position,
+            hogwartsStudent : hogwartsStudent,
+            hogwartsStaff : hogwartsStaff,
+            alive: true,
             image : "https://pbs.twimg.com/profile_images/1378007131027251209/qY7wH_2W_400x400.jpg"
         }).then(res => {
             //console.info(res);
